@@ -59,6 +59,11 @@ func assignDest(val interface{}, dest interface{}) error {
 			*dv = v
 			assigned = true
 		}
+	case uint8:
+		if dv, ok := dest.(*uint8); ok {
+			*dv = v
+			assigned = true
+		}
 	case uint16:
 		if dv, ok := dest.(*uint16); ok {
 			*dv = v
@@ -96,6 +101,11 @@ func assignDest(val interface{}, dest interface{}) error {
 		}
 	case []byte:
 		if dv, ok := dest.(*[]byte); ok {
+			*dv = v
+			assigned = true
+		}
+	case []uint8:
+		if dv, ok := dest.(*[]uint8); ok {
 			*dv = v
 			assigned = true
 		}
